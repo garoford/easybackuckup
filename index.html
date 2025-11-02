@@ -1,13 +1,63 @@
 <!doctype html>
-<html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Btrfs Visual Manager</title>
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <div class="app">
+      <nav class="sidebar">
+        <div class="logo">
+          <h1>� Btrfs Manager</h1>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item active" id="nav-dashboard">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Dashboard</span>
+          </li>
+          <li class="nav-item" id="nav-snapshots">
+            <span class="nav-icon">📋</span>
+            <span class="nav-label">Snapshots</span>
+          </li>
+          <li class="nav-item" id="nav-restore">
+            <span class="nav-icon">⚠️</span>
+            <span class="nav-label">Restaurar</span>
+          </li>
+          <li class="nav-item" id="nav-config">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-label">Configuración</span>
+          </li>
+          <li class="nav-item" id="nav-logs">
+            <span class="nav-icon">📄</span>
+            <span class="nav-label">Logs</span>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <div class="view active" id="view-dashboard">
+          <div id="dashboard-content"></div>
+        </div>
+
+        <div class="view" id="view-snapshots">
+          <div id="snapshots-content"></div>
+        </div>
+
+        <div class="view" id="view-restore">
+          <div id="restore-content"></div>
+        </div>
+
+        <div class="view" id="view-config">
+          <div id="config-content"></div>
+        </div>
+
+        <div class="view" id="view-logs">
+          <div id="logs-content"></div>
+        </div>
+      </main>
+    </div>
+
     <script type="module" src="/src/renderer.ts"></script>
   </body>
 </html>

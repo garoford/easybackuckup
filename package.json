@@ -1,8 +1,8 @@
 {
-  "name": "backups_a_medida2",
-  "productName": "backups_a_medida2",
+  "name": "btrfs-visual-manager",
+  "productName": "Btrfs Visual Manager",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Aplicación visual para gestionar snapshots y restauraciones de Btrfs",
   "main": ".vite/build/main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -11,7 +11,7 @@
     "publish": "electron-forge publish",
     "lint": "eslint --ext .ts,.tsx ."
   },
-  "keywords": [],
+  "keywords": ["btrfs", "snapshot", "backup", "fedora", "linux"],
   "author": {
     "name": "Alvaro Huaroc",
     "email": "alvarohuaroc@outlook.es"

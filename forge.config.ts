@@ -1,7 +1,4 @@
 import type { ForgeConfig } from '@electron-forge/shared-types';
-import { MakerSquirrel } from '@electron-forge/maker-squirrel';
-import { MakerZIP } from '@electron-forge/maker-zip';
-import { MakerDeb } from '@electron-forge/maker-deb';
 import { MakerRpm } from '@electron-forge/maker-rpm';
 import { VitePlugin } from '@electron-forge/plugin-vite';
 import { FusesPlugin } from '@electron-forge/plugin-fuses';
@@ -10,13 +7,23 @@ import { FuseV1Options, FuseVersion } from '@electron/fuses';
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
+    name: 'Btrfs Visual Manager',
+    executableName: 'btrfs-visual-manager',
   },
   rebuildConfig: {},
   makers: [
-    new MakerSquirrel({}),
-    new MakerZIP({}, ['darwin']),
-    new MakerRpm({}),
-    new MakerDeb({}),
+    new MakerRpm({
+      options: {
+        homepage: 'https://github.com/garoford/easybackuckup',
+        categories: ['Utility', 'System'],
+        license: 'MIT',
+        bin: 'btrfs-visual-manager',
+        description: 'Aplicación visual para gestionar snapshots y restauraciones de Btrfs en Fedora',
+        productDescription: 'Btrfs Visual Manager permite crear y restaurar snapshots de forma sencilla con interfaz gráfica.',
+        genericName: 'Btrfs Snapshot Manager',
+        requires: ['btrfs-progs', 'polkit'],
+      }
+    }),
   ],
   plugins: [
     new VitePlugin({
